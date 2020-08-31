@@ -249,11 +249,16 @@ pool
 
 ```
 app.post("/users", (req, res) => {
- const { name } = req.body;
- pool
-   .query('INSERT INTO users(first_name) values($1);', [name])
-   .then(data => res.status(201).json(data))
-   .catch(e => res.sendStatus(500));
+  const { first_name, last_name, age } = req.body;
+
+  pool
+    .query("INSERT INTO users(first_name, last_name, age) values($1,$2, $3);", [
+      first_name,
+      last_name,
+      age,
+    ])
+    .then((data) => res.status(201).json(data))
+    .catch((e) => res.sendStatus(500));
 });
 ```
 
