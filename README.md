@@ -11,6 +11,17 @@
 - [Part 2: node-postgresql-destructured](https://github.com/dirkbosman/node-postgresql-destructured)
 - [Part 3: node-postgresql-controllers](https://github.com/dirkbosman/node-postgresql-controllers)
 
+# Clone Repo
+
+```
+git clone
+cd
+npm i
+npm start
+```
+
+# Manual Set-up
+
 ## Environment & Libraries
 
 Install the necessary libraries:
@@ -280,3 +291,12 @@ app.put("/users/:id", (req, res) => {
 
 Terminal:
 `curl -d '{"name": "Pikachu"}' -H "Content-Type: application/json" -X PUT http://localhost:3000/users/5`
+
+## Appendix
+
+To look whether curl requests were successful, you can for example navigate to:
+
+- http://localhost:3000/users
+- http://localhost:3000/orders
+
+Furthermore, you can install the following Google Chrome extension to format JSON for you: `JSON Formatter`.
