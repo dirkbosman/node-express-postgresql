@@ -12,13 +12,13 @@
 
 ## Environment & Libraries
 
-After cloning this repo 
+After cloning this repo:
 ```
+git clone https://github.com/dirkbosman/node-postgresql-unstructured.git
+cd node-postgresql-unstructured
 npm i
 ```
-or 
-
-Install the necessary libraries manually:
+or by manually installing libraries:
 ```
 npm init -y
 npm i express
