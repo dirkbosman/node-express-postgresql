@@ -14,8 +14,8 @@
 # Clone Repo
 
 ```
-git clone
-cd
+git clone https://github.com/dirkbosman/node-postgresql-unstructured.git
+cd node-postgresql-unstructured
 npm i
 npm start
 ```
