@@ -1,14 +1,20 @@
 # node-postgresql-unstructured
 
-
-## Steps
-
-#### [Part 1](https://github.com/dirkbosman/node-postgresql-unstructured) and [Part 2](https://github.com/dirkbosman/node-postgresql-destructured) to use as a boilerplate to set-up a:
+#### Summary:
 - node express server, middleware and apis
 - postgresql relational database
 
-Process
+## Boilerplates:
+#### [Part 1: node-postgresql-unstructured](https://github.com/dirkbosman/node-postgresql-unstructured) 
+#### [Part 2: node-postgresql-destructured](https://github.com/dirkbosman/node-postgresql-destructured)
+#### [Part 3: node-postgresql-controllers](https://github.com/dirkbosman/node-postgresql-controllers)
 
+
+
+
+## Environment & Libraries
+
+Install the necessary libraries:
 ```
 npm init -y
 npm i express
@@ -16,19 +22,16 @@ npm i nodemon --save-dev
 npm i dotenv
 ```
 
-
-// Add
+Add the following to package.json:
+```
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon server.js"
   }
+```
 
-
-// Note: we add nodemon only for development, and 
-// not for production, because it is unsafe. 
-// -------------------------------------------------
-
-
+Note: we add nodemon only for development, and not for production, because it is unsafe. 
+```
   "dependencies": {
     "dotenv": "^8.2.0",
     "express": "^4.17.1"
@@ -36,27 +39,35 @@ npm i dotenv
   "devDependencies": {
     "nodemon": "^2.0.4"
   }
+```
 
+For production, you would configure start-prod in npm-scripts / in docker configurations.
+```
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start-prod": "node server.js"
+  }
+```
 
-// For production, you would configure start-prod in npm-scripts / in docker configurations.
-// "start-prod": "node server.js"
+You can run the following in the terminal to start the server (via nodemon): ```npm start```
 
-
-// starts with nodemon
-npm start
-
-
-* https://api.elephantsql.com/console/
 
 
 Work to do: 1 First Commit + 1 Commit Per addition of a request endpoint (11 commits)
-
 Create a Github Repo
 Create an  instance on ElephantSQL (you have a guide for that)  
-
 Create the database with: 
 
 
+## Database
+
+Navigate to https://api.elephantsql.com/console/ to create an account.
+
+Create your database and copy the information. You will need this latter details to connect via your application.
+
+Create your database tables now:
+
+```
 CREATE TABLE users (
    id  SERIAL PRIMARY KEY,
    first_name varchar(255),
@@ -76,11 +87,12 @@ INSERT INTO users (first_name, last_name, age) VALUES ('John', 'Doe', 18);
 INSERT INTO users (first_name, last_name, age) VALUES ('Bob', 'Dylan', 30);
 INSERT INTO users (first_name, last_name, age) VALUES ('Jane', 'Doe', 25);
  
- 
 INSERT INTO orders (price,date, user_id) VALUES ( 18, '2001-01-01 00:00:00', 1);
 INSERT INTO orders (price,date, user_id) VALUES ( 18, '2001-01-02 04:00:00', 1);
 INSERT INTO orders (price,date, user_id) VALUES ( 18, '2001-01-03 05:00:00', 2);
 INSERT INTO orders (price,date, user_id) VALUES ( 18, '2001-01-04 06:00:00', 2);
+```
+
 
 
 Create an Express server with routes for the users on:
