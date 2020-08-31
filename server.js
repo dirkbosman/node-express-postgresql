@@ -26,10 +26,14 @@ app.get("/users/:id", (req, res) => {
 });
 
 app.post("/users", (req, res) => {
-  const { name } = req.body;
+  const { first_name, last_name, age } = req.body;
 
   pool
-    .query("INSERT INTO users(first_name) values($1);", [name])
+    .query("INSERT INTO users(first_name, last_name, age) values($1,$2, $3);", [
+      first_name,
+      last_name,
+      age,
+    ])
     .then((data) => res.status(201).json(data))
     .catch((e) => res.sendStatus(500));
 });
@@ -45,10 +49,10 @@ app.delete("/users/:id", (req, res) => {
 
 app.put("/users/:id", (req, res) => {
   const { id } = req.params;
-  const { name } = req.body;
+  const { first_name } = req.body;
 
   pool
-    .query("UPDATE users SET first_name=$1 WHERE id=$2;", [name, id])
+    .query("UPDATE users SET first_name=$1 WHERE id=$2;", [first_name, id])
     .then((data) => res.status(201).json(data))
     .catch((e) => res.sendStatus(500));
 });

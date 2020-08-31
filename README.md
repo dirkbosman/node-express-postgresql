@@ -246,6 +246,9 @@ app.post("/users", (req, res) => {
 });
 ```
 
+Terminal:
+`curl -X POST -H "Content-Type:application/json" http://localhost:3000/users -d '{"first_name":"Piet", "last_name":"Skyf", "age":"17"}'`
+
 #### DELETE Record(s):
 
 ```
