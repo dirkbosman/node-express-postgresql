@@ -12,7 +12,13 @@
 
 ## Environment & Libraries
 
-Install the necessary libraries:
+After cloning this repo 
+```
+npm i
+```
+or 
+
+Install the necessary libraries manually:
 ```
 npm init -y
 npm i express
