@@ -10,6 +10,7 @@
 - [Part 1: node-postgresql-unstructured](https://github.com/dirkbosman/node-postgresql-unstructured)
 - [Part 2: node-postgresql-destructured](https://github.com/dirkbosman/node-postgresql-destructured)
 - [Part 3: node-postgresql-controllers](https://github.com/dirkbosman/node-postgresql-controllers)
+- [Part 4: node-mongodb-controllers](https://github.com/dirkbosman/node-mongodb-controllers)
 
 # Clone Repo
 
@@ -282,12 +283,9 @@ app.delete("/users/:id", (req, res) => {
 ```
 
 Terminal:
+
 - Note: You will not be able to delete a record (via curl) if you have a reference from one record to another table's record in the DB.
-`curl -H "Content-Type: application/json" -X DELETE http://localhost:3000/users/3`
-
-
-
-
+  `curl -H "Content-Type: application/json" -X DELETE http://localhost:3000/users/3`
 
 #### UPDATE Record(s):
 
