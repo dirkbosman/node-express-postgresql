@@ -139,6 +139,9 @@ Read:
 
 - https://expressjs.com/en/guide/routing.html
 - https://node-postgres.com
+- https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
+- https://developer.mozilla.org/en-US/docs/Glossary/REST
+- https://developer.mozilla.org/en-US/docs/Web/API
 
 Create routes for the _users_ on:
 
@@ -279,7 +282,12 @@ app.delete("/users/:id", (req, res) => {
 ```
 
 Terminal:
+- Note: You will not be able to delete a record (via curl) if you have a reference from one record to another table's record in the DB.
 `curl -H "Content-Type: application/json" -X DELETE http://localhost:3000/users/3`
+
+
+
+
 
 #### UPDATE Record(s):
 
